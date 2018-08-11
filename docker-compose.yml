@@ -1,0 +1,9 @@
+version: '3.1'
+
+services:
+    app:
+        image: 'my-trial-app'
+        build: '.'
+        ports:
+            - 3002:80
+
