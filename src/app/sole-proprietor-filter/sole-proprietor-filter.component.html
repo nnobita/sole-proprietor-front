@@ -3,8 +3,7 @@
 <ul class="owners">
   <li *ngFor="let owner of owners">
     <a routerLink="/detail/{{owner.id}}">
-      <span class="badge">{{owner.id}}</span> {{owner.name}}
-    </a>
+      <span class="badge">{{owner.id}}</span> {{owner.name}} </a>
     <button class="delete" title="Delete"
       (click)="delete(owner)">x</button>
   </li>
