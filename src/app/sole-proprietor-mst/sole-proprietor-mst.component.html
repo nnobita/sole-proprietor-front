@@ -1,35 +1,18 @@
 <h2>Sole Proprietors List</h2>
-<div class="boxcontainer">
-  <div class="sidebar">
-    <ul class="menus">
-      <li>
-        <a routerLink="/owners">All users</a>
-      </li>
-      <li>
-        <a routerLink="/registered">Users with individual number registration</a>
-      </li>
-      <li>
-        <a routerLink="/unregistered">Users without individual number registration</a>
-      </li>
-    </ul>
-  </div>
-  <div class="main">
-    <ul class="owners">
-      <li *ngFor="let owner of owners">
-        <a routerLink="/detail/{{owner.id}}">
-          <span class="badge">{{owner.id}}</span> {{owner.name}}
-        </a>
-        <button class="delete" title="Delete" (click)="delete(owner)">x</button>
-      </li>
-    </ul>
-    <div>
-      <label>Hero name:
-        <input #ownerName />
-      </label>
-      <!-- (click) passes input value to add() and then clears the input -->
-      <button (click)="add(ownerName.value); ownerName.value=''">
-        Add
-      </button>
-    </div>
-  </div>
+<ul class="owners">
+  <li *ngFor="let owner of owners">
+    <a routerLink="/detail/{{owner.id}}">
+      <span class="badge">{{owner.id}}</span> {{owner.name}}
+    </a>
+    <button class="delete" title="Delete" (click)="delete(owner)">x</button>
+  </li>
+</ul>
+<div>
+  <label>Hero name:
+    <input #ownerName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(ownerName.value); ownerName.value=''">
+    Add
+  </button>
 </div>

@@ -27,3 +27,38 @@ nav a:hover {
 nav a.active {
   color: #039be5;
 }
+
+.boxContainer{
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+.sidebar {
+  display: table-cell;
+  width: 30%;
+  background-color: #ddd;
+}
+
+.main {
+  display: table-cell;
+  width: 70%;
+}
+
+.menus {
+  list-style-type: none;
+}
+
+.menus li {
+  background-color: #eee;
+  margin: .5em;
+  padding: .3em 0;
+}
+
+.menus li:hover {
+  background-color: #ccc;
+}
+
+.menus a {
+  text-decoration: none;
+}
