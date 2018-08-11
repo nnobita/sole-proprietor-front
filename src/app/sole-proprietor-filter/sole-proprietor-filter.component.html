@@ -1,0 +1,12 @@
+<h2>Sole Proprietors with(out) Individual Number Registration</h2>
+<div *ngIf="true">
+<ul class="owners">
+  <li *ngFor="let owner of owners">
+    <a routerLink="/detail/{{owner.id}}">
+      <span class="badge">{{owner.id}}</span> {{owner.name}}
+    </a>
+    <button class="delete" title="Delete"
+      (click)="delete(owner)">x</button>
+  </li>
+</ul>
+</div>
