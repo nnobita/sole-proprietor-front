@@ -5,7 +5,7 @@
   padding: 0;
   width: 25em;
 }
-.owners li {
+.owners tr {
   position: relative;
   cursor: pointer;
   background-color: #EEE;
@@ -14,7 +14,7 @@
   border-radius: 4px;
 }
 
-.owners li:hover {
+.owners tr:hover {
   color: #607D8B;
   background-color: #DDD;
   left: .1em;
@@ -23,6 +23,7 @@
 .owners a {
   color: #888;
   text-decoration: none;
+  text-align: left;
   position: relative;
   display: block;
 }
@@ -32,16 +33,12 @@
 }
 
 .owners .badge {
-  display: inline-block;
   font-size: small;
   color: white;
-  padding: 0.8em 0.7em 0 0.7em;
+  padding: 0.8em 0.7em 0.8em 0.7em;
   background-color: #607D8B;
-  line-height: 1em;
   position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
+  min-height: 1.8em;
   min-width: 16px;
   text-align: right;
   margin-right: .8em;
@@ -63,9 +60,6 @@ button:hover {
 }
  
 button.delete {
-  position: relative;
-  left: 194px;
-  top: -32px;
   background-color: gray !important;
   color: white;
 }
