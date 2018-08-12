@@ -1,26 +1,33 @@
-<h2>Sole Proprietors List</h2>
-<table class="owners">
-  <tr *ngFor="let owner of owners">
+<div class="boxcontainer">
+  <div class="sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main">
+    <h2>Sole Proprietors List</h2>
+    <table class="owners">
+      <tr *ngFor="let owner of owners">
 
-    <th class="badge">
-      {{owner.id}}
-    </th>
+        <th class="badge">
+          {{owner.id}}
+        </th>
 
-    <th>
-      <a routerLink="/detail/{{owner.id}}">{{owner.name}}</a>
-    </th>
+        <th>
+          <a routerLink="/detail/{{owner.id}}">{{owner.name}}</a>
+        </th>
 
-    <th>
-      <button class="delete" title="Delete" (click)="delete(owner)">x</button>
-    </th>
-  </tr>
-</table>
-<div>
-  <label>Hero name:
-    <input #ownerName />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(ownerName.value); ownerName.value=''">
-    Add
-  </button>
+        <th>
+          <button class="delete" title="Delete" (click)="delete(owner)">x</button>
+        </th>
+      </tr>
+    </table>
+    <div>
+      <label>Hero name:
+        <input #ownerName />
+      </label>
+      <!-- (click) passes input value to add() and then clears the input -->
+      <button (click)="add(ownerName.value); ownerName.value=''">
+        Add
+      </button>
+    </div>
+  </div>
 </div>

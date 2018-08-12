@@ -1,21 +1,4 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <h1>{{ title }}</h1>
-<div class="boxcontainer">
-    <div class="sidebar">
-        <ul class="menus">Users
-            <li>
-                <a routerLink="/owners">All users</a>
-            </li>
-            <li>
-                <a routerLink="/registered">Users with individual number registration</a>
-            </li>
-            <li>
-                <a routerLink="/unregistered">Users without individual number registration</a>
-            </li>
-        </ul>
-    </div>
-    <div class="main">
-        <router-outlet></router-outlet>
-    </div>
-</div>
+<router-outlet></router-outlet>
 <app-messages></app-messages>

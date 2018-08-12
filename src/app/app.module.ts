@@ -15,6 +15,7 @@ import { SoleProprietorDetailComponent } from './sole-proprietor-detail/sole-pro
 import { MessagesComponent } from './messages/messages.component';
 import { SoleProprietorSearchComponent } from './sole-proprietor-search/sole-proprietor-search.component';
 import { SoleProprietorFilterComponent } from './sole-proprietor-filter/sole-proprietor-filter.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SoleProprietorFilterComponent } from './sole-proprietor-filter/sole-pro
     SoleProprietorDetailComponent,
     MessagesComponent,
     SoleProprietorSearchComponent,
-    SoleProprietorFilterComponent
+    SoleProprietorFilterComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
