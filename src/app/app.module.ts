@@ -16,6 +16,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { SoleProprietorSearchComponent } from './sole-proprietor-search/sole-proprietor-search.component';
 import { SoleProprietorFilterComponent } from './sole-proprietor-filter/sole-proprietor-filter.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { BizpartnerMstComponent } from './bizpartner-mst/bizpartner-mst.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     MessagesComponent,
     SoleProprietorSearchComponent,
     SoleProprietorFilterComponent,
-    SidebarComponent
+    SidebarComponent,
+    BizpartnerMstComponent
   ],
   imports: [
     BrowserModule,
