@@ -1,0 +1,39 @@
+/* ownersComponent's private CSS styles */
+.notices {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 25em;
+  }
+
+  .notices tr {
+    position: relative;
+    cursor: pointer;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em 0;
+    border-radius: 4px;
+  }
+
+  .notices thead tr {
+      background-color: #CCC;
+  }
+  
+  
+  button {
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer;
+    cursor: hand;
+    font-family: Arial;
+  }
+   
+  button:hover {
+    background-color: #cfd8dc;
+  }
+   
+  
+  

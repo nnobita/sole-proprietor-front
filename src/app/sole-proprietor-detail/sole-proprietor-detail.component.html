@@ -12,8 +12,21 @@
   </div>
   <button (click)="save()">Save</button>
   <button (click)="goBack()">Go back</button>
+  <h3>Notices</h3>
   <table class="notices">
-    <h3>Notices</h3>
+    <thead>
+      <tr class='table_header'>
+        <th>
+          Created at
+        </th>
+        <th>
+          Created by
+        </th>
+        <th>
+          Content
+        </th>
+      </tr>
+    </thead>
     <tr *ngFor="let notice of notices">
       <th>
         {{notice.last_update}}
