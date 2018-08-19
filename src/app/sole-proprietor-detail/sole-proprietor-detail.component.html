@@ -26,4 +26,13 @@
       </th>
     </tr>
   </table>
+  <div>
+    <label>New Notice:
+      <input #newNotice />
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="addNoticeRecord(newNotice.value); newNotice.value=''">
+      Add
+    </button>
+  </div>
 </div>

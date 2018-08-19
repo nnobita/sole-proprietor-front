@@ -6,6 +6,10 @@ import { MessageService } from './message.service';
 
 import { Notice } from './notice';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,8 +20,12 @@ export class NoticeService {
     private messageService: MessageService
   ) { }
 
-  getNotices(id: number): Observable<Notice[]> {
-    const url = `${this.noticesUrl}/?owner_id=${id}`;
+  getNotices(owner_id: number): Observable<Notice[]> {
+    const url = `${this.noticesUrl}/?owner_id=${owner_id}`;
     return this.http.get<Notice[]>(url);
   } 
+
+  addNotice(notice: Notice): Observable<Notice> {
+    return this.http.post<Notice>(this.noticesUrl, notice, httpOptions);
+  }
 }

@@ -48,4 +48,19 @@ export class SoleProprietorDetailComponent implements OnInit {
     this.location.back();
   }
 
+  addNoticeRecord(msg: string): void {
+    msg = msg.trim();
+    if (!msg) { return; }
+    var notice = new Notice();
+    notice.content = msg;
+    notice.owner_id = this.owner.id;
+    notice.last_update = new Date().toString();
+    notice.updated_by = 'test_user';
+    
+    this.noticeService.addNotice(notice)
+      .subscribe(owner => {
+        this.notices.push(notice);
+      });
+  }
+
 }
