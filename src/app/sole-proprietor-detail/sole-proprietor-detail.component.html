@@ -1,11 +1,29 @@
 <div *ngIf="owner">
   <h2>{{owner.name | uppercase}} Details</h2>
-  <div><span>ID: </span>{{owner.id}}</div>
+  <div>
+    <span>ID: </span>{{owner.id}}</div>
   <div>
     <label>Name:
-      <input [(ngModel)]="owner.name" placeholder="name"/>
+      <input [(ngModel)]="owner.name" placeholder="name" />
     </label>
+  </div>
+  <div>
+    <input [(ngModel)]="owner.status" type="checkbox" />Registered
   </div>
   <button (click)="save()">Save</button>
   <button (click)="goBack()">Go back</button>
+  <table class="notices">
+    <h3>Notices</h3>
+    <tr *ngFor="let notice of notices">
+      <th>
+        {{notice.last_update}}
+      </th>
+      <th>
+        {{notice.updated_by}}
+      </th>
+      <th>
+        {{notice.content}}
+      </th>
+    </tr>
+  </table>
 </div>

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
+import { MessageService } from './message.service';
 
 import { Notice } from './notice';
 
@@ -8,16 +10,14 @@ import { Notice } from './notice';
   providedIn: 'root'
 })
 export class NoticeService {
-
+  private noticesUrl = 'api/notices';
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private messageService: MessageService
   ) { }
 
-  getOwner(id: number): Observable<Notice> {
-    const url = `${this.ownersUrl}/${id}`;
-    return this.http.get<Notice>(url).pipe(
-      tap(_ => this.log(`fetched owner id=${id}`)),
-      catchError(this.handleError<Notice>(`getOwner id=${id}`))
-    );
+  getNotices(id: number): Observable<Notice[]> {
+    const url = `${this.noticesUrl}/?owner_id=${id}`;
+    return this.http.get<Notice[]>(url);
   } 
 }

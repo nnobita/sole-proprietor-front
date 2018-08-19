@@ -4,6 +4,8 @@ import { Location } from '@angular/common';
 
 import { SoleProprietor }  from '../sole-proprietor';
 import { SoleProprietorService }  from '../sole-proprietor.service';
+import { NoticeService }  from '../notice.service';
+import { Notice } from '../notice';
 
 @Component({
   selector: 'app-sole-proprietor-detail',
@@ -12,10 +14,12 @@ import { SoleProprietorService }  from '../sole-proprietor.service';
 })
 export class SoleProprietorDetailComponent implements OnInit {
   owner: SoleProprietor;
+  notices: Notice[];
 
   constructor(
     private route: ActivatedRoute,
     private soleProprietorService: SoleProprietorService,
+    private noticeService: NoticeService,
     private location: Location
   ) { }
 
@@ -27,6 +31,12 @@ export class SoleProprietorDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.soleProprietorService.getOwner(id)
       .subscribe(owner => this.owner = owner);
+    this.getNotices(id);
+  }
+
+  getNotices(id: number): void {
+    this.noticeService.getNotices(id)
+    .subscribe(notices => this.notices = notices);
   }
 
   save(): void {

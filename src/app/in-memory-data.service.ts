@@ -18,11 +18,11 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 116, name: 'Jugemu Jugemu Goko no Surikire Chokyumei no Chosuke', status: true },
       { id: 117, name: 'Alexa Dimitrova', status: false }
     ];
-    const notice = [
-      { id: 211, owner_id: 11, last_update: '2018-07-14', updated_by: 'Yamada Ichiro' },
-      { id: 212, owner_id: 13, last_update: '2018-08-05', updated_by: 'Kato Yasuo' },
-      { id: 213, owner_id: 11, last_update: '2018-07-28', updated_by: 'Yamada Ichiro' },
+    const notices = [
+      { id: 211, owner_id: 11, content: 'Test.', last_update: '2018-07-14', updated_by: 'Yamada Ichiro' },
+      { id: 212, owner_id: 13, content: 'Please!',  last_update: '2018-08-05', updated_by: 'Kato Yasuo' },
+      { id: 213, owner_id: 11, content: 'Fuck!',  last_update: '2018-07-28', updated_by: 'Yamada Ichiro' },
     ]
-    return {owners, bizpartners};
+    return {owners, bizpartners, notices};
   }
 }
