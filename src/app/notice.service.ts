@@ -14,14 +14,15 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class NoticeService {
-  private noticesUrl = 'api/notices';
+  private noticesUrl = 'http://localhost:8080/ac-individual/api/notices';
+  //private noticesUrl = 'api/notices';
   constructor(
     private http: HttpClient,
     private messageService: MessageService
   ) { }
 
   getNotices(owner_id: number): Observable<Notice[]> {
-    const url = `${this.noticesUrl}/?owner_id=${owner_id}`;
+    const url = `${this.noticesUrl}/?ownerId=${owner_id}`;
     return this.http.get<Notice[]>(url);
   } 
 

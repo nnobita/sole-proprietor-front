@@ -17,8 +17,11 @@ export class SoleProprietorMstComponent implements OnInit {
 
   add(name: string): void {
     name = name.trim();
+    var status = 0;
+    var lastUpdate = new Date();
+    var updatedBy = 'test_user';
     if (!name) { return; }
-    this.soleProprietorService.addOwner({ name } as SoleProprietor)
+    this.soleProprietorService.addOwner({ name, status, lastUpdate, updatedBy } as SoleProprietor)
       .subscribe(owner => {
         this.owners.push(owner);
       });

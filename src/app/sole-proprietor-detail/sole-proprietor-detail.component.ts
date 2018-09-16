@@ -40,6 +40,7 @@ export class SoleProprietorDetailComponent implements OnInit {
   }
 
   save(): void {
+    this.owner.status = this.owner.status ? 1 : 0;
     this.soleProprietorService.updateOwner(this.owner)
       .subscribe(() => this.goBack());
   }
@@ -53,9 +54,9 @@ export class SoleProprietorDetailComponent implements OnInit {
     if (!msg) { return; }
     var notice = new Notice();
     notice.content = msg;
-    notice.owner_id = this.owner.id;
-    notice.last_update = new Date().toString();
-    notice.updated_by = 'test_user';
+    notice.ownerId = this.owner.id;
+    notice.lastUpdate = new Date();
+    notice.updatedBy = 'test_user';
     
     this.noticeService.addNotice(notice)
       .subscribe(owner => {

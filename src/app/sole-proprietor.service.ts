@@ -16,7 +16,8 @@ const httpOptions = {
 })
 export class SoleProprietorService {
 
-  private ownersUrl = 'api/owners';
+  //private ownersUrl = 'api/owners';
+  private ownersUrl = 'http://localhost:8080/ac-individual/api/owners';
   constructor(
     private http: HttpClient,
     private messageService: MessageService
@@ -66,7 +67,13 @@ export class SoleProprietorService {
   }
 
   filterOwners(registered: boolean): Observable<SoleProprietor[]> {
-    return this.http.get<SoleProprietor[]>(`${this.ownersUrl}/?status=${registered}`).pipe(
+    var path = '';
+    if (registered) {
+      path = '/registered';
+    } else {
+      path = '/unregistered';
+    }
+    return this.http.get<SoleProprietor[]>(`${this.ownersUrl}${path}`).pipe(
       tap(_ => this.log(`found owners with registration = "${registered}"`)),
       catchError(this.handleError<SoleProprietor[]>('filterOwners', []))
     );
