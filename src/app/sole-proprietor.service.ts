@@ -16,7 +16,7 @@ const httpOptions = {
 })
 export class SoleProprietorService {
 
-  private ownersUrl = environment.rootUrl;
+  private ownersUrl = environment.rootUrl + '/owners';
   constructor(
     private http: HttpClient,
     private messageService: MessageService
@@ -67,11 +67,20 @@ export class SoleProprietorService {
 
   filterOwners(registered: boolean): Observable<SoleProprietor[]> {
     var path = '';
-    if (registered) {
-      path = '/registered';
+    if (environment.production) {
+      if (registered) {
+        path = '/registered';
+      } else {
+        path = '/unregistered';
+      }
     } else {
-      path = '/unregistered';
+      if (registered) {
+        path = '/?status=1';
+      } else {
+        path = '/?status=0';
+      }
     }
+    
     return this.http.get<SoleProprietor[]>(`${this.ownersUrl}${path}`).pipe(
       tap(_ => this.log(`found owners with registration = "${registered}"`)),
       catchError(this.handleError<SoleProprietor[]>('filterOwners', []))
