@@ -4,8 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { SoleProprietor } from './sole-proprietor'
-import { SOLEPROPRIETORS } from './mock-sole-proprietor-mst';
 import { MessageService } from './message.service';
+import { environment } from '../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -16,8 +16,7 @@ const httpOptions = {
 })
 export class SoleProprietorService {
 
-  //private ownersUrl = 'api/owners';
-  private ownersUrl = 'http://localhost:8080/ac-individual/api/owners';
+  private ownersUrl = environment.rootUrl;
   constructor(
     private http: HttpClient,
     private messageService: MessageService
